@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Donate — Stronger Together Foundation</title>
+  <meta name="description" content="Donate securely to Stronger Together Foundation. Support education, health and community programmes." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <div class="brand">
+        <img src="assets/img/logo.png" alt="logo" class="logo" />
+        <div class="brand-text">
+          <h1>Stronger Together Foundation</h1>
+          <p class="tagline">Your gift transforms lives</p>
+        </div>
+      </div>
+
+      <nav id="nav-menu" class="nav-links" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="donate.html" class="btn btn-primary">Donate</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <button id="nav-toggle" aria-expanded="false" aria-controls="nav-menu">☰</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card donate-card">
+      <h2>Make a secure donation</h2>
+
+      <p>
+        Thank you for supporting Stronger Together Foundation. Your donation funds direct, local interventions for children: school supplies, health screenings, sanitation improvements and structured activities that promote learning and wellbeing. We value every contribution and ensure donors receive clear, timely reporting about how funds are used.
+      </p>
+
+      <p>
+        <strong>How donations are used:</strong> We allocate funds according to programme priorities and publish quarterly breakdowns. Small donations are pooled to fund school kits and programme essentials; larger gifts may support infrastructure improvements or sustainably funded programmes.
+      </p>
+
+      <form id="donation-form">
+        <div class="form-grid">
+          <div>
+            <label>Cause
+              <select id="cause" required>
+                <option value="general">General Fund — flexible support</option>
+                <option value="education">Education — Back-to-School</option>
+                <option value="health">Health — Healthy Girls</option>
+                <option value="community">Community — Play Spaces</option>
+              </select>
+            </label>
+
+            <label>Amount (GHS)
+              <input id="amount" type="number" min="1" placeholder="e.g. 100" required />
+            </label>
+
+            <label>Payment type
+              <select id="payment-type">
+                <option value="momo">Mobile Money (MTN MoMo, Vodafone, AirtelTigo)</option>
+                <option value="card">Card (Visa, Mastercard — international donors)</option>
+              </select>
+            </label>
+
+            <div class="momo-fields">
+              <label>Mobile Network
+                <select id="network">
+                  <option value="mtn">MTN MoMo</option>
+                  <option value="vodafone">Vodafone Cash</option>
+                  <option value="airteltigo">AirtelTigo Money</option>
+                </select>
+              </label>
+
+              <label>Mobile Money Number
+                <input id="phone" type="tel" placeholder="024XXXXXXXX" />
+              </label>
+            </div>
+          </div>
+
+          <div>
+            <label>Full name (for receipt)
+              <input id="donor-name" placeholder="Your full name" required />
+            </label>
+
+            <label>Email (optional — we can email receipts)
+              <input id="donor-email" type="email" placeholder="you@example.com" />
+            </label>
+
+            <label>Message (optional)
+              <textarea id="donor-note" rows="4" placeholder="A short message (e.g. dedication)"></textarea>
+            </label>
+
+            <p class="muted small">
+              NOTE: The site currently operates in demo mode. To accept live payments we will add secure server-side integration with a payment gateway (Paystack, Flutterwave or Hubtel). We do not store card details or secret keys in client-side code.
+            </p>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button type="submit" class="btn btn-primary">Proceed (Demo)</button>
+          <a href="contact.html" class="btn btn-ghost">Contact for large gifts</a>
+        </div>
+      </form>
+    </section>
+
+    <!-- Donation modal (demo) -->
+    <div id="donation-modal" class="modal" aria-hidden="true" role="dialog">
+      <div class="modal-box card">
+        <h3>Confirm donation (demo)</h3>
+        <pre id="donation-preview" style="white-space:pre-wrap;"></pre>
+        <div style="display:flex;gap:.6rem;margin-top:.6rem">
+          <button id="confirm-pay" class="btn btn-primary">Confirm & Simulate</button>
+          <button id="close-modal" class="btn btn-ghost">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h4>Stronger Together Foundation</h4>
+        <p class="muted">Every donation is recorded and accounted for. Contact hello@strongertogether.org for receipts and queries.</p>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <ul class="links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p class="muted"><a href="mailto:kiteguijohn@gmail.com">kiteguijohn@gmail.com</a><br/>WhatsApp: +233 53 7782 610</p>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>© <span id="year"></span> Stronger Together Foundation</p>
+    </div>
+  </footer>
+
+  <script src="https://js.paystack.co/v1/inline.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
